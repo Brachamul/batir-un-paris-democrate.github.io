@@ -163,6 +163,6 @@ p.copyright {
 
 
 .team .img-fluid {  margin-bottom: 1rem; }
-.teammember { padding: 0 2.5rem; margin: 1rem auto; }
+.team-member { padding: 0 2.5rem; margin: 1rem auto; }
 
 .read-more ~ p { display: none; }
