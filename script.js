@@ -48,7 +48,7 @@ function teamSetup() {
 		template: `
 			<div id="team" class="col-12 col-lg-10 mr-auto ml-auto">
 
-				<div class="row" style="margin-left: 0; margin-right: 0;">
+				<div class="row team-wrapper">
 
 					<testimonial
 						v-for="testimonial in store.state.testimonials"

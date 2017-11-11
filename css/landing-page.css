@@ -193,4 +193,5 @@ p.copyright {
   p.lead { font-size: 1rem; }
   .main-quote { font-size: 1.4rem; }
   .main-quote-wrapper { margin: 0; }
+  .team-wrapper { margin-left: 0; margin-right: 0; }
 }
