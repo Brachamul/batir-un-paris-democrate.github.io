@@ -46,9 +46,9 @@ function teamSetup() {
 		store,
 		components: { testimonial },
 		template: `
-			<div class="col-10" id="team">
+			<div id="team" class="col-12 col-lg-10 mr-auto ml-auto">
 
-				<div class="row">
+				<div class="row" style="margin-left: 0; margin-right: 0;">
 
 					<testimonial
 						v-for="testimonial in store.state.testimonials"

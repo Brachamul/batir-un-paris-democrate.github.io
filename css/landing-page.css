@@ -150,7 +150,6 @@ body, h1, h2, h3, h4, h5, h6 {
   ul.banner-social-buttons>li:last-child {
     margin-bottom: 0;
   }
-  .navbar-brand { font-size: 1rem; }
 }
 
 footer {
@@ -183,3 +182,15 @@ p.copyright {
 .testimonial-name { margin-bottom: 0; }
 .testimonial-title { line-height: 1; }
 .testimonial-text { opacity: .75; }
+
+.main-quote { font-style: italic; font-size: 2.4rem; line-height: 1; }
+.main-quote-wrapper { text-align: center; margin-top: 2rem; margin-bottom: 2rem; }
+
+@media(max-width:767px) {
+  .navbar-brand { font-size: 1rem; }
+  .team-member { padding: 0; }
+  .main-portrait { float: none; width: 6rem; height: 6rem; }
+  p.lead { font-size: 1rem; }
+  .main-quote { font-size: 1.4rem; }
+  .main-quote-wrapper { margin: 0; }
+}
