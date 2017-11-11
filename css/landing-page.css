@@ -150,6 +150,7 @@ body, h1, h2, h3, h4, h5, h6 {
   ul.banner-social-buttons>li:last-child {
     margin-bottom: 0;
   }
+  .navbar-brand { font-size: 1rem; }
 }
 
 footer {
@@ -162,7 +163,23 @@ p.copyright {
 }
 
 
-.team .img-fluid {  margin-bottom: 1rem; }
-.team-member { padding: 0 2.5rem; margin: 1rem auto; }
+.portrait { 
+  width: 4rem; height: 4rem;
+  margin-right: 1rem; margin-bottom: 1rem;
+  background-position: center center;
+  background-size: cover;
+  border-radius: 4rem;
+  box-shadow: 0 0 .5rem 5px rgba(0,0,0,.05);
+}
+
+.main-portrait { float: right; width: 10rem; height: 10rem; border-radius: 10rem; margin-left: 1rem; margin-right: 0; }
+
+.team-member { padding: 0 1.5rem; margin: 1rem auto; }
+
+.navbar { box-shadow: 0 0 .5rem 5px rgba(0,0,0,.05); }
 
 .read-more ~ p { display: none; }
+
+.testimonial-name { margin-bottom: 0; }
+.testimonial-title { line-height: 1; }
+.testimonial-text { opacity: .75; }

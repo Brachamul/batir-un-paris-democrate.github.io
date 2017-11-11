@@ -2,7 +2,7 @@ function teamSetup() {
 	// Store
 	window.store = new Vuex.Store({
 		state: {
-			members: [],
+			testimonials: [],
 		},
 		mutations: {
 			updateData(state, payload) {
@@ -13,22 +13,29 @@ function teamSetup() {
 		}
 	})
 	
-	var _airTable = new airTable(apiKey='keyQ9LAVuNmhIIhjN', appKey='appHznRjE909j9VlP')
+	var _airTable = new airTable(apiKey='keyLu9ztyvGwQEfCw', appKey='appPrctGxRtmKRWdG')
 
-	Vue.http.get(_airTable.ListEndpoint('Membres')).then((response) => {
-		var members = _airTable.Clean(response.body.records)
-		store.commit('updateData', {'members': members})
+	Vue.http.get(_airTable.ListEndpoint('Témoignages')).then((response) => {
+		var testimonials = _airTable.Clean(response.body.records)
+		store.commit('updateData', {'testimonials': testimonials})
 	})
 	
 	// Components
 
-	var Member = {
-		props: ['member'],
+	var testimonial = {
+		props: ['testimonial'],
 		template: `
-			<div class="col-sm-3 team-member">
-				<img alt="image" class="img-fluid" src="./img/img_round.svg">
-				<h5><strong>Sara Doe</strong></h3>
-				<p class="small text-muted">"Wild Question Marks, but the Little Blind"</p>
+			<div class="col-sm-4 team-member">
+				<div class="row">
+					<div class="col-3">
+						<div class="portrait" v-bind:style="{ backgroundImage: 'url(' + testimonial.Photo[0].thumbnails.large.url + ')' }"></div>
+					</div>
+					<div class="col-9 testimonial-header">
+						<h5 class="testimonial-name">{{ testimonial['Témoin'] }}</h5>
+						<p class="testimonial-title">{{ testimonial['Titre'] }}</p>
+					</div>
+				</div>
+				<p class="small testimonial-text">“{{ testimonial['Texte'] }}”</p>
 			</div>
 		`
 	}
@@ -37,19 +44,21 @@ function teamSetup() {
 	var app = new Vue({
 		el: '#team',
 		store,
-		components: { Member },
+		components: { testimonial },
 		template: `
 			<div class="col-10" id="team">
 
 				<div class="row">
 
-					<member
-						v-for="member in store.state.members"
-						:member="member"
-						></member>
+					<testimonial
+						v-for="testimonial in store.state.testimonials"
+						:testimonial="testimonial"
+						></testimonial>
 
-            	</div>
+				</div>
 			</div>
 		`
 	})
 }
+
+
